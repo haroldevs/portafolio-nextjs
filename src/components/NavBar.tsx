@@ -2,6 +2,8 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { FC } from "react";
 import { useRouter } from "next/router";
+import { GithubIcon, LinkedInIcon, TwitterIcon } from "./Icons";
+import { motion } from "framer-motion";
 
 interface CustomLinkProps {
   href: string;
@@ -35,22 +37,37 @@ const NavBar = () => {
         <CustomLink href="/articles" title="Articles" className="ml-4" />
       </nav>
 
-      <nav>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
-        <Link href="/" target="_blank">
-          T
-        </Link>
+      <nav className="flex items-center justify-center flex-wrap">
+        <motion.a
+          href="/"
+          target="_blank"
+          rel="noreferrer"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mr-3"
+        >
+          <TwitterIcon />
+        </motion.a>
+        <motion.a
+          href="/"
+          target="_blank"
+          rel="noreferrer"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mx-3"
+        >
+          <GithubIcon />
+        </motion.a>
+        <motion.a
+          href="/"
+          target="_blank"
+          rel="noreferrer"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 ml-3"
+        >
+          <LinkedInIcon />
+        </motion.a>
       </nav>
       <div className="absolute left-[50%] top-4 translate-x-[-50%] ">
         <Logo />
